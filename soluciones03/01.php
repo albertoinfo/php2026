@@ -1,6 +1,6 @@
 <?php
    //Rellenar un array
-   function crearTabla($tamaño){
+   function crearTabla(int $tamaño){
        $tablaResu =[];
        for ($i = 0; $i < $tamaño; $i++) {
         $tablaResu[] = rand (1,10);
@@ -9,7 +9,7 @@
    }
      
    // Equivale a la funcion max($array) de la libreria PHP
-   function valorMaximo ($tabla) {
+   function valorMaximo (array $tabla) {
         $valor = $tabla[0];
         for ($i = 0; $i < count($tabla); $i++) {
             if ($tabla[$i] > $valor) {
@@ -19,18 +19,18 @@
         return $valor;
     }
     // Equivale a la funcion min($array) de la librería PHP
-    function valorMinimo ($tabla) {
+    function valorMinimo (array $tabla) {
         $valor = $tabla[0];
-        for ($i = 0; $i < count($tabla); $i++) {
-            if ($tabla[$i] < $valor) {
-                $valor = $tabla[$i];
+        foreach ($tabla as $num) {
+            if ($num < $valor) {
+                $valor = $num;
             }
         }
        
         return $valor;
     }
     //Devuelve el número que mas veces se repite
-    function valorRepetido ($tabla) {
+    function valorRepetido (array $tabla) {
         $maxrepes = 0;
         $valor =0;
         for ($i = 0; $i < count($tabla); $i++) {
@@ -49,7 +49,7 @@
         return $valor;
     }
     // Otra forma usando la libreria sobre arrays
-    function valorRepetido2 ($tabla) {
+    function valorRepetido2 (array $tabla) {
         // Obtengo una tabla con los valores como clave 
         // y las frecuencias como valor
         $tvaloresyfrecuencias = array_count_values($tabla); 
