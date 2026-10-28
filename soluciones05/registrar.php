@@ -1,12 +1,12 @@
 <?php
 // Funciones auxilires  
 // ------------------------------------------------------------------
-function estaVacio($valor)
+function estaVacio(string $valor)
 {
     return empty(trim($valor));
 }
 
-function hayMayusculas($valor)
+function hayMayusculas(string $valor)
 {
     for ($i = 0; $i < strlen($valor); $i++) {
         if (ctype_upper($valor[$i]))
@@ -15,7 +15,7 @@ function hayMayusculas($valor)
     return false;
 }
 
-function hayMinusculas($valor)
+function hayMinusculas(string $valor)
 {
     for ($i = 0; $i < strlen($valor); $i++) {
         if (ctype_lower($valor[$i]))
@@ -24,7 +24,7 @@ function hayMinusculas($valor)
     return false;
 }
 
-function hayDigito($valor)
+function hayDigito(string $valor)
 {
     for ($i = 0; $i < strlen($valor); $i++) {
         if (ctype_digit($valor[$i]))
@@ -33,7 +33,7 @@ function hayDigito($valor)
     return false;
 }
 
-function hayNoAlfanumerico($valor)
+function hayNoAlfanumerico(string $valor)
 {
     for ($i = 0; $i < strlen($valor); $i++) {
         if (!ctype_alnum($valor[$i]))
