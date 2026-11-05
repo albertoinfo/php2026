@@ -3,7 +3,7 @@
 
 trait Ejemplotrait
 {
-    private $precio;
+    private int $precio;
     function setprecio (int $precio ){
         $this->precio = $precio;
     }

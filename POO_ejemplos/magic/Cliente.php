@@ -2,13 +2,14 @@
 
 class Cliente {
 
-    private $id;
-    private $nombre;
+    private int $id;
+    private string $nombre;
 
-    public function __get($atributo){
+
+    public function __get(string $atributo){
 
         if ( property_exists($this, $atributo)){
-            return  "Hola Pepe";
+            return  $this->$atributo;
        }
        else{
            return "El valor no está definido";
@@ -16,7 +17,7 @@ class Cliente {
 
     }    
 
-    public function __set($atributo, $valor){
+    public function __set(string $atributo, mixed $valor){
         $this->$atributo = $valor;
   }
 }

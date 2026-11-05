@@ -5,8 +5,8 @@ include_once 'MotorInterface.php';
 
 class Batidora implements MotorInterface
 {
-    private $electricidad;
-    protected $potencia;
+    private int $electricidad;
+    protected int $potencia;
     
 
     function __construct(int $potencia){
@@ -22,7 +22,7 @@ class Batidora implements MotorInterface
     public function apagar():bool
     {
         $this->electricidad = false;
-        return false;
+        return true;
     }
 
     public function estaEncendido():bool

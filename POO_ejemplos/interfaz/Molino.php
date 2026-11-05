@@ -6,9 +6,9 @@ include_once 'MotorInterface.php';
  */
 class Molino implements MotorInterface
 {
-    private $compuerta;
-    private $presion;
-    private $aspas;
+    private bool $compuerta;
+    private int $presion;
+    private int $aspas;
     
     function __construct(int $aspas){
         $this->aspas = $aspas;
@@ -34,7 +34,7 @@ class Molino implements MotorInterface
 
     public function estaEncendido():bool
     {
-        return ( $this->cerrado == false);
+        return ( $this->compuerta == true);
     }
 
     public function infoEstado():string{
@@ -43,7 +43,7 @@ class Molino implements MotorInterface
                "Presión   :".$this->presion."\n";
     }
 
-    public function darpresion( $presion){
+    public function darpresion( int $presion){
         $this->presion = $presion;
     }
 }

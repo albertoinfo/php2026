@@ -5,7 +5,7 @@ class CuentaBancariaConCredito extends CuentaBancaria
     // Atributos de Clase
     // -------------------------------------
     
-    private $interes;   // Interes a pagar con saldo negativo
+    private float $interes;   // Interes a pagar con saldo negativo
 
     // -------------------------------------
     //   METODOS:
@@ -26,7 +26,7 @@ class CuentaBancariaConCredito extends CuentaBancaria
     // Abono, decremento el saldo en la cantidad indicada como parámetro.
     // Sobreescribo la clase padre
     public function abono (int $cantidad){
-        if ( ($this->saldo - $cantidad) > 0){
+        if ( ($this->saldo - $cantidad) >= 0){
             $this->saldo -= $cantidad;
         } else {
             // Se queda con una deuda con interes

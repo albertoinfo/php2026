@@ -4,9 +4,9 @@ class CuentaBancaria {
     // Atributos de Clase
     // -------------------------------------
     
-    protected $saldo;          // Saldo actual de la cuenta
-    protected $numMovimientos; // Número de movimientos realizados
-    private static $numCuentas = 0; // Número de cuentas creadas
+    protected int $saldo;          // Saldo actual de la cuenta
+    protected int $numMovimientos; // Número de movimientos realizados
+    private static int $numCuentas = 0; // Número de cuentas creadas
     
     // -------------------------------------
     //   METODOS:
