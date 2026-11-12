@@ -11,6 +11,9 @@ class Usuario
     function __get($name)
     {
         if (property_exists($this, $name)) {
+            if ($name == "comentario"){
+                return "Sin comentario";
+            }
             return $this->$name;
         }
     }
